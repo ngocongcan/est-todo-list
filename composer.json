@@ -1,0 +1,31 @@
+{
+  "name": "Est/TodoApp",
+  "description": "Todo app",
+  "authors": [
+    {
+      "name": "Can Ngo",
+      "email": "ngocongcan@gmail.com",
+      "homepage": "http://ngocongcan.github.io",
+      "role": "Software engineer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Est\\TodoApp\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Est\\TodoApp\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}
