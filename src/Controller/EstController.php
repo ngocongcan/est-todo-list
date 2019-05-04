@@ -33,7 +33,7 @@ class EstController
     }
 
     private function _parseParams() {
-        $method = $_SERVER['REQUEST_METHOD'];
+        $method = isset($_SERVER['REQUEST_METHOD']) ?  $_SERVER['REQUEST_METHOD'] : null;
         if ($method == "GET") {
             $this->params = $_GET;
         } else if ($method == "POST") {
