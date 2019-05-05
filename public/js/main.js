@@ -21,7 +21,8 @@ $(document).ready(function ($) {
                     start: new Date(dateStartParts[0], dateStartParts[1] - 1, dateStartParts[2]),
                     end: new Date(dateEndParts[0], dateEndParts[1] - 1, dateEndParts[2]),
                     allDay: false,
-                    text: task.text_status
+                    text: task.text_status,
+                    status: task.text_status.toLowerCase()
                 });
             }
             data.sort(function(a,b) { return (+a.start) - (+b.start); });
@@ -135,7 +136,7 @@ $.extend(Date.prototype, {
                 monthAddEvent(index, event);
                 return;
             }
-            var $event = $('<div/>', {'class': 'event', text: event.title, title: event.title, 'data-index': index}),
+            var $event = $('<div/>', {'class': 'event ' + event.status, text: event.title, title: event.title, 'data-index': index}),
                 start = event.start,
                 end = event.end || start,
                 time = event.start.toTimeString(),
@@ -161,7 +162,7 @@ $.extend(Date.prototype, {
         }
 
         function monthAddEvent(index, event) {
-            var $event = $('<div/>', {'class': 'event', text: event.title, title: event.title, 'data-index': index}),
+            var $event = $('<div/>', {'class': 'event ' + event.status, text: event.title, title: event.title, 'data-index': index}),
                 e = new Date(event.start),
                 dateclass = e.toDateCssClass(),
                 day = $('.' + e.toDateCssClass()),

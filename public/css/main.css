@@ -18,6 +18,20 @@
     white-space: nowrap;
     text-align: right;
 }
+.planing {
+    background-image: linear-gradient(to bottom, #428bca 0px, #428bca 100%) !important;
+    color: #fff !important;
+}
+
+.doing {
+    background-image: linear-gradient(to bottom, #5cb85c 0px, #5cb85c 100%) !important;
+    color: #fff !important;
+}
+
+.complete {
+    background-image: linear-gradient(to bottom, #5bc0de 0px, #5bc0de 100%) !important;
+    color: #fff !important;
+}
 .event {
     border-top: 1px solid #b2dba1;
     border-bottom: 1px solid #b2dba1;
